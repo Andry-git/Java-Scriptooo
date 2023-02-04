@@ -1,0 +1,30 @@
+.red-button{
+	background: red;
+	width:200px; 
+	height:150px;
+}
+body{
+	background: #8a2c2599;
+}
+.secret{
+	width:100px; 
+	height:100px;
+	background: pink;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+}
+button{
+	background: #991177;
+	width:100px; 
+	height:150px;
+	margin: 10px;
+}
+.dvij{
+	width:100px; 
+	height:100px;
+	background: pink;
+	position: absolute;
+	left: 90%;
+
+}
