@@ -45,6 +45,25 @@ setTimeout(()=>{
 	 rect.style.left=90-clicks2+"%";
 	 clicks2++;
  });
+
+ const myButton3 = document.getElementById('clicker');
+ let isRotate=false;
+ let timerId;
+ let count=1;
+ myButton3.addEventListener('click',()=>{
+	if((!isRotate))
+	{
+		timerId=setInterval(()=>{
+			myButton3.style.position="absolute";
+			myButton3.style.transform="rotate("+ count*10 +"deg)";
+			myButton3.style.left=count+"%";
+			myButton3.style.top=count+"%";
+			count++;
+		}, 1000);
+	}
+ })
+
+
  
 
 
