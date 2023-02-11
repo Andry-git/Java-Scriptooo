@@ -1,31 +1,36 @@
-.red-button{
-	background: red;
-	width:200px; 
-	height:150px;
+.name {
+  color: red;
+  text-align: center;
 }
-body{
-	background: #8a2c2599;
+.description {
+  color: purple;
+  border: 5px dashed;
 }
-.secret{
-	width:100px; 
-	height:100px;
-	background: pink;
-	position: absolute;
-    top: 50%;
-    left: 50%;
+.avatar {
+  width: 500px;
+  height: 500px;
+  border-radius: 3%;
 }
-button{
-	background: #991177;
-	width:100px; 
-	height:150px;
-	margin: 10px;
+.Character {
+  color: purple;
+  border: solid;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+  background: #be3d3499;
 }
-.dvij{
-	width:100px; 
-	height:100px;
-	background: pink;
-	position: absolute;
-	left: 90%;
+.Clicker {
+  width: 100px;
+  height: 100px;
+  background: pink;
+  margin-right: 100%;
+  border-radius: 20%;
+}
+.MyButton{
+  width: 100%;
+  height: 100px;
+  background: rgb(196, 104, 165);
+  font-size: 50px;
+}
 
-}
 

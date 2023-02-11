@@ -1,67 +1,81 @@
+import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 
-const myButton = document.getElementById('1');
+import App from "./App";
+import "./Character.css";
 
-myButton.addEventListener('click', () => {
-    alert('Про мать было лишнее');
-});
+const rootElement = document.getElementById("root");
+const root = createRoot(rootElement!);
 
- console.log(5);
-  console.log(number('5','2'));  
- function number(a,b){
-	const c=a+5+'!';
-	return c;
- } 
- 
- const help=(a,b)=>{
-	 console.log('AAAAAAA',a+b);
- };
- help(5,6);
-alert('Шутки про мать'); 
-setTimeout(()=>{
-	alert('Были лишние...');
- },1000);
- setInterval(()=>{
-	alert('Бургер кинг говно');
- },1000000000);
- 
- const myRoot=document.getElementById('root');
- const myButton2 = document.createElement('button');
- myButton2.innerHTML="Click";
- myRoot.appendChild(myButton2);
- 
- let clicks =0;
- const curButton=document.getElementById('counter');
- let name =curButton.innerText + " ";
- curButton.addEventListener('click',()=>{
-	 clicks=clicks+1;
-	 curButton.innerHTML=name+clicks;
- });
- 
- let clicks2=1;
- const rect = document.getElementById('rect');
+class MyButton extends React.Component {
+  render() {
+    const children = this.props.children;
+    const onClick = this.props.onClick;
+    return (
+      <button className="MyButton" onClick={onClick}>
+        {children}
+      </button>
+    );
+  }
+}
 
- rect.addEventListener('click',()=>{
-	 rect.style.top=clicks2+"%";
-	 rect.style.left=90-clicks2+"%";
-	 clicks2++;
- });
+class Clicker extends React.Component {
+  state={clicks:0};
+  handleClick=()=>{
+    const prevClicks=this.state.clicks;
+    this.setState({
+      clicks:prevClicks+1
+    });
+  }
+  render() {
+    return (
+      <button className="Clicker" onClick={this.handleClick}>
+        {this.state.clicks}
+      </button>
+    );
+  }
+}
 
- const myButton3 = document.getElementById('clicker');
- let isRotate=false;
- let timerId;
- let count=1;
- myButton3.addEventListener('click',()=>{
-	if((!isRotate))
-	{
-		timerId=setInterval(()=>{
-			myButton3.style.position="absolute";
-			myButton3.style.transform="rotate("+ count*10 +"deg)";
-			myButton3.style.left=count+"%";
-			myButton3.style.top=count+"%";
-			count++;
-		}, 1000);
-	}
- })
+class Character extends React.Component {
+  render() {
+    const name = this.props.name;
+    const description = this.props.description;
+    const avatar = this.props.avatar;
+    const age = this.props.age;
+    return (
+      <div class="Character">
+        <MyButton onClick={() => alert(name)}>{name}</MyButton>
+        <p class="description">{description}</p>
+        <img src={avatar} class="avatar" />
+        <p class="age">{age}</p>
+        <Clicker/>
+      </div>
+    );
+  }
+}
+
+root.render(
+  <div>
+    <Character
+      name="Вилкас"
+      description="Белый"
+      avatar="https://theslide.ru/img/thumbs/b13e8f3ee7ffbff2c7aa19b06521d6e8-800x.jpg"
+      age="0 лет"
+    />
+    <Character
+      name="Бокс-Кокс"
+      description="Черный"
+      avatar="http://i.mycdn.me/i?r=AzEPZsRbOZEKgBhR0XGMT1RkyTdy7EyXYwszC7_-r6_SeaaKTM5SRkZCeTgDn6uOyic"
+      age="5 лет"
+    />
+    <Character
+      name="Буравчик"
+      description="Рыжий"
+      avatar="https://haski-mana.ru/wp-content/uploads/b/1/a/b1ac629beb5e9bf22414401e6413b873.jpeg"
+      age="4 года"
+    />
+  </div>
+);
 
 
  
