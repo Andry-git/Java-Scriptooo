@@ -29,12 +29,22 @@ const root = createRoot(rootElement);
 // }
 
 class Students extends React.Component {
-  state = { students: ["Андрей"] };
+  state = {
+    students: [{ FirstName: "Андрей", LastName: "Йердна" }],
+    FirstName: "",
+    LastName: ""
+  };
   handleAdd = () => {
-    const prev = this.state.students;
-    const newStudent = [...prev];
-    newStudent.push("Никита Бульдозер");
-    this.setState({ students: newStudent });
+    const newStudents = [...this.state.students];
+    newStudents.push({
+      FirstName: this.state.FirstName,
+      LastName: this.state.LastName
+    });
+    this.setState({
+      students: newStudents,
+      FirstName: "",
+      LastName: ""
+    });
   };
   handleRemove = (index) => {
     const prev = this.state.students;
@@ -44,6 +54,15 @@ class Students extends React.Component {
     });
     this.setState({ students: newStudent });
   };
+  handleFirstNameChange = (event) => {
+    this.setState({ FirstName: event.target.value });
+  };
+
+  handleLastNameChange = (event) => {
+    this.setState({ LastName: event.target.value });
+  };
+
+  //1
   // handleDelete = (index) => {
   //   const prev = this.state.students;
   //   const newStudent = [];
@@ -54,13 +73,14 @@ class Students extends React.Component {
   // }
   //   this.setState({ students: newStudent });
   // };
-
   render() {
+    console.log(this.state);
     return (
       <div>
         {this.state.students.map((student, i) => (
           <div>
-            <h1>{student}</h1>
+            <h1>{student.FirstName}</h1>
+            <h1>{student.LastName}</h1>
             <button
               className="MyButton"
               onClick={() => {
@@ -71,6 +91,18 @@ class Students extends React.Component {
             </button>
           </div>
         ))}
+        <div>
+          <input
+            type="text"
+            value={this.state.FirstName}
+            onChange={this.handleFirstNameChange}
+          />
+          <input
+            type="text"
+            value={this.state.LastName}
+            onChange={this.handleLastNameChange}
+          />
+        </div>
         <button className="MyButton" onClick={this.handleAdd}>
           Добавить
         </button>
@@ -111,6 +143,68 @@ class MyButton extends React.Component {
   }
 }
 
+export class DateInput extends React.Component {
+  state = { dateValue: "" };
+
+  handleChange = (event) => {
+    this.setState({ dateValue: event.target.value });
+  };
+
+  render() {
+    return (
+      <div>
+        <input
+          type="date"
+          value={this.state.dateValue}
+          onChange={this.handleChange}
+        />
+      </div>
+    );
+  }
+}
+
+export class Checkbox extends React.Component {
+  state = { checkboxValue: "" };
+
+  handleChange = (event) => {
+    this.setState({ checkboxValue: event.target.checked });
+  };
+
+  render() {
+    return (
+      <div>
+        <input
+          type="checkbox"
+          class="myinput large custom"
+          checked={this.state.checkboxValue}
+          onChange={this.handleChange}
+        />
+      </div>
+    );
+  }
+}
+
+export class Select extends React.Component {
+  state = { selectedValue: "" };
+
+  handleChange = (event) => {
+    this.setState({ selectedValue: event.target.value });
+  };
+
+  render() {
+    return (
+      <div>
+        <select onChange={this.handleChange} value={this.state.selectedValue}>
+          <option value="A">Серёжа</option>
+          <option value="B">Рустам</option>
+          <option value="C">Андрей</option>
+          <option value="C">Макс</option>
+        </select>
+      </div>
+    );
+  }
+}
+
 class Character extends React.Component {
   render() {
     const name = this.props.name;
@@ -130,6 +224,9 @@ class Character extends React.Component {
 
 root.render(
   <div>
+    <Checkbox />
+    <Select />
+    <DateInput />
     <Students />
     <Character
       name="Вилкас"
