@@ -1,0 +1,87 @@
+.name {
+  color: red;
+  text-align: center;
+}
+.description {
+  color: white;
+  border: 5px inset;
+}
+.avatar {
+  width: 500px;
+  height: 500px;
+  border-radius: 3%;
+}
+.Character {
+  color: white;
+  border: solid;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+  background: #be3d3499;
+}
+.Clicker {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.514);
+  color:white;
+  border-radius: 20%;
+}
+.MyButton {
+  width: 100%;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.514);
+  font-size: 50px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #be3d3499;
+}
+
+body {
+  background-image: url("https://phonoteka.org/uploads/posts/2021-05/thumbs/1620281790_48-phonoteka_org-p-krutoi-fon-dlya-video-49.jpg");
+  color: white;
+}
+
+input {
+  width: 200px;
+  padding: 20px;
+  border-radius: 30px;
+  background: rgba(255, 0, 0, 0.514);
+  color: white;
+}
+select {
+  width: 200px;
+  padding: 20px;
+  border-radius: 30px;
+  background: rgba(255, 0, 0, 0.514);
+  color: white;
+}
+button:hover{
+  background: rgba(255, 0, 0, 0.777);
+}
+.myinput[type="checkbox"]:before {
+  position: relative;
+  display: block;
+  margin-left: 45%;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #808080;
+  content: "";
+  background: #fff;
+}
+
+.myinput[type="checkbox"]:after {
+  position: absolute;
+
+  border-color: #b3b3b3 #dcddde #dcddde #b3b3b3;
+  content: "";
+}
+
+.myinput.large.custom[type="checkbox"]:checked:after {
+  background-image: url("https://klike.net/uploads/posts/2020-04/1587719791_1.jpg"),
+    linear-gradient(135deg, #b1b6be 0%, #fff 100%);
+  width: 1000px;
+  height: 1000px;
+}
