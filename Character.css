@@ -1,0 +1,56 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.name {
+  color: red;
+  text-align: center;
+}
+.description {
+  color: white;
+  border: 5px inset;
+}
+.avatar {
+  width: 500px;
+  height: 500px;
+  border-radius: 3%;
+}
+.Character {
+  color: white;
+  border: solid;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+  background: #2b060399;
+}
+.Clicker {
+  width: 100px;
+  height: 100px;
+  background: rgb(100, 238, 135);
+  margin-right: 100%;
+  border-radius: 20%;
+}
+.MyButton {
+  width: 100%;
+  height: 100px;
+  background: rgba(255, 0, 0, 0.514);
+  font-size: 50px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  background-color: #11ca4f99;
+}
+input {
+  background-color: rgb(100, 238, 135);
+  font-size: 50px;
+  text-align: center;
+  border-radius: 50%;
+  font: 164px;
+}
+body {
+  color: white;
+  font-size: 20px;
+  background-image: url("https://sun9-62.userapi.com/impg/YfCv8g6YQ8XwoNC-FyX0PHYUZUp8-3x6q8wwTw/yNRibAsEn-w.jpg?size=1280x1068&quality=95&sign=ed42368505078ed53d0761668a578c09&c_uniq_tag=z1GSEvzY9JsUITdcSK4WOLFLkGXTc3vMPIdwvkmSOJw&type=album");
+}
