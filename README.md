@@ -3,8 +3,6 @@ https://ru.stackoverflow.com/questions/847058/%D0%9A%D0%B0%D0%BA-%D0%B7%D0%B0%D0
 Ссылка <br>
 На alert
 
+https://htmlacademy.ru/
 
-красота
-https://mui.com/
-
-https://wgj4ln.csb.app/
+https://learn.javascript.ru/
